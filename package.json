@@ -6,7 +6,8 @@
   "scripts": {
     "eslint": "eslint index.jsx",
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
-    "karma": "./node_modules/.bin/karma start --browsers PhantomJS"
+    "karma": "./node_modules/.bin/karma start --browsers PhantomJS",
+    "prepublish": "panto"
   },
   "repository": {
     "type": "git",
