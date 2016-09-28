@@ -1,7 +1,7 @@
 # react-any-video
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
-[React](https://facebook.github.io/react/) wrapper of [video](https://www.w3.org/wiki/HTML/Elements/video) element.
+[React](https://facebook.github.io/react/) wrapper of [video](https://www.w3.org/wiki/HTML/Elements/video) element. <https://yanni4night.github.io/react-any-video/>
 
 ## usage
 
