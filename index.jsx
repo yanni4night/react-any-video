@@ -26,15 +26,19 @@ class Video extends React.Component {
             return /^on\w+$/i.test(key);
         }).map(key => key.slice(2).toLowerCase());
 
-        events.forEach(evt => {
-            const func = this.props.events['on' + evt];
-            video.addEventListener(evt, func, false);
+        events.forEach(event => {
+            const func = this.props.events[`on${event}`];
+            video.addEventListener(event, func, false);
 
             this._events.push({
-                event: evt,
+                event,
                 func
             });
         });
+
+        if (this.props.muted) {
+            video.muted = true;
+        }
     }
     componentWillUpdate(nextProps) {
         const boolProps = 'muted,controls,loop,autoplay'.split(',');

@@ -55,7 +55,7 @@ describe('video', () => {
             assert.ok(video.hasAttribute('preload'), 'has "preload" attribute');
             assert.ok(video.hasAttribute('controls'), 'has "controls" attribute');
             assert.ok(video.hasAttribute('autoplay'), 'has "autoplay" attribute');
-            assert.ok(video.hasAttribute('muted'), 'has "muted" attribute');
+            assert.ok(video.hasAttribute('muted') || video.muted, 'has "muted" attribute');
             div.parentNode.removeChild(div);
         });
     });
