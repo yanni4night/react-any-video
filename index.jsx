@@ -42,7 +42,7 @@ class Video extends React.Component {
     }
     componentWillUpdate(nextProps) {
         const boolProps = 'muted,controls,loop,autoplay'.split(',');
-        const props = 'src,poster,preload,crossorigin,height,width'.split(',');
+        const props = 'src,poster,preload,crossorigin,mediagroup,height,width'.split(',');
 
         props.forEach(prop => {
             if (prop in nextProps) {
@@ -70,7 +70,7 @@ class Video extends React.Component {
         });
     }
     _computeVideoParams() {
-        const {src, muted, controls, autoplay, height, width, poster, preload, loop, crossorigin} = this.props;
+        const {src, muted, controls, autoplay, height, width, poster, mediagroup, preload, loop, crossorigin} = this.props;
 
         const param = {};
 
@@ -102,6 +102,10 @@ class Video extends React.Component {
             param.poster = poster;
         }
 
+        if (mediagroup) {
+            param.mediaGroup = mediagroup;
+        }
+
         if (crossorigin) {
             param.crossOrigin = crossorigin;
         }
@@ -130,6 +134,7 @@ class Video extends React.Component {
 Video.propTypes = {
     src: React.PropTypes.string,
     poster: React.PropTypes.string,
+    mediagroup: React.PropTypes.string,
     width: React.PropTypes.number,
     height: React.PropTypes.number,
     crossorigin: React.PropTypes.oneOf(['anonymous', 'use-credentials']),

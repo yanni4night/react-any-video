@@ -26,7 +26,7 @@ function createElement(tag) {
     return div;
 }
 
-const FOO_VIDEO_URL = 'http://tb-video.bdstatic.com/tieba-smallvideo-spider/8_060cfcdfec7710d750af7df6a6d9fd1c.mp4';
+const FOO_VIDEO_URL = 'http://media.w3.org/2010/05/sintel/trailer.mp4';
 
 const isPhantomJS = ~navigator.userAgent.indexOf('PhantomJS');
 
@@ -61,13 +61,14 @@ describe('video', () => {
     });
     describe('set props', () => {
         const boolProps = 'muted,controls,loop,autoplay'.split(',');
-        const props = 'src,poster,preload,crossOrigin,height,width'.split(',');
+        const props = 'src,poster,preload,crossOrigin,mediaGroup,height,width'.split(',');
 
         const propsValue = {
             src: [FOO_VIDEO_URL],
             poster: ['http://ww4.sinaimg.cn/large/801b780ajw1f83ie6f0a6j20ve0vcacv.jpg'],
             preload: ['none', 'metadata', 'auto'],
             crossOrigin: ['anonymous', 'use-credentials'],
+            mediaGroup: ['ua'],
             height: [300, 400],
             width: [300, 400]
         };
